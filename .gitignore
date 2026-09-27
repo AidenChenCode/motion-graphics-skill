@@ -1,0 +1,8 @@
+# 项目运行产物只会出现在用模板生成的项目里，这里以防误放
+node_modules/
+build/
+out/
+package-lock.json
+*-workspace/
+.DS_Store
+*.skill

@@ -1,0 +1,15 @@
+{
+  "name": "motion-graphics-project",
+  "private": true,
+  "type": "module",
+  "description": "代码生成动效：WebGL2 + Canvas2D + Web Audio → headless Chrome → ffmpeg",
+  "scripts": {
+    "export": "node export.mjs --parallel 3",
+    "preview": "node export.mjs --parallel 3 --step 3",
+    "verify": "python3 verify.py"
+  },
+  "dependencies": {
+    "puppeteer-core": "^25.0.0",
+    "ws": "^8.18.0"
+  }
+}

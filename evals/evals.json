@@ -1,0 +1,23 @@
+{
+  "skill_name": "motion-graphics",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我们公司做一支 30 秒的品牌动画，公司叫 Aurora（中文名 极光科技），品牌色是紫色 #6C3BFF，标语是「看见更远的光」，英文 slogan 'SEE FURTHER'，要有配乐，最后给我 MP4。项目放在 ~/Desktop/aurora-motion。",
+      "expected_output": "在 ~/Desktop/aurora-motion 生成完整项目（spec.js 填入品牌信息、紫色主色、三个概念词），导出 out/*_web.mp4 与母版，verify.py 全部 PASS（900 帧、-18…-11 LUFS、切点同步 ≤ 40 ms），交付时附分镜拼图并说明路径与商标提示。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "这是我们发布会的参考片 /Users/zhilanc/Desktop/联想/27:Sep:2026动画制作demo/8fe9277007d6fd72644522a9f1bdc20e.MP4，按它的风格给品牌 Beacon 做一支 15 秒的开场动画（品牌色 #00B5AD，不要中文，slogan 'LIGHT THE WAY'），导出 1080p MP4 放到 ~/Desktop/beacon-open。",
+      "expected_output": "先抽帧看参考片结构并写出视觉语言清单；把时间表压缩到 15 秒（makeTimeline 拍数改短、删减词卡/星座/蓝图段），品牌与颜色填入 spec.js；导出并 verify 通过（帧数 = 450 且时长 ≈ 15 s）；交付 MP4 与拼图。",
+      "files": ["/Users/zhilanc/Desktop/联想/27:Sep:2026动画制作demo/8fe9277007d6fd72644522a9f1bdc20e.MP4"]
+    },
+    {
+      "id": 3,
+      "prompt": "用我这个 logo 做个 logo 动画：evals/files/skyward-logo.svg，品牌 Skyward，金色 #F2B705，不要中文，配乐轻一点别那么多鼓，1080p，输出到 ~/Desktop/skyward-logo。",
+      "expected_output": "spec.js 里 brand.logo 指向复制进项目目录的 logo 文件（tint: true），cn 留空；score.js 减少鼓组（去掉词卡段拍手/减小 kick 或改成更柔和的编曲）；导出并 verify 通过；交付 MP4。",
+      "files": ["/Users/zhilanc/.claude/skills/motion-graphics/evals/files/skyward-logo.svg"]
+    }
+  ]
+}
