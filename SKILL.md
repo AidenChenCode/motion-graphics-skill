@@ -79,6 +79,10 @@ python3 verify.py
 - 配乐：`score.js` 的 `PROJECT.score(kit)` 用乐器包调度；乐器、编曲套路、混音链、响度调法见 `references/music.md`。切点上的声音（stab / impact / bell）必须引用与画面相同的 `TL` 时间点，这是"同步靠构造保证"的含义。
 - 踩过的坑（削波、导出慢、文件巨大、交叉淡变重影、长字母名、字体）见 `references/troubleshooting.md`，遇到异常先查它。
 
+## 与分层 skills 的关系
+
+本 skill 是技术栈五层的**组合体**（带一套现成品牌分镜）。想自己组合出别的片子，用对应的分层 skill：`webgl-canvas-scene`（画面：WebGL2 + Canvas2D）→ `webaudio-score`（音乐：Web Audio 离线合成）→ `headless-export`（导出：puppeteer-core + Chrome 无头逐帧）→ `ffmpeg-encode`（编码）→ `video-verify`（核对）。它们的引擎与本模板同源；分层版的 `engine-visual.js` / `engine-audio.js` 可以替换本模板的 `engine.js`（把 spec.js 里的 `const BEAT` 去掉即可）。
+
 ## 铁律
 
 1. **纯函数**：任何帧只依赖 `t`。随机用 `mulberry32(SPEC.seed + k)`，粒子位置写成闭式（`x = f(t)`），不做逐帧累积——否则无法随机访问帧、并行导出会撕裂、两次导出结果不一致。
